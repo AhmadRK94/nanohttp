@@ -6,6 +6,6 @@ type Request struct {
 	Version     string
 	Headers     map[string]string
 	Body        []byte
-	QueryParams map[string]string
+	QueryParams map[string][]string
 	PathParams  map[string]string
 }
