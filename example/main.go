@@ -16,5 +16,6 @@ func main() {
 	fmt.Println(parsedURL.RawPath)
 	fmt.Println(parsedURL.Query())
 	fmt.Println(slices.Contains(ValidHttpMethods, "GET"))
+	fmt.Println(len("سلام"))
 
 }
