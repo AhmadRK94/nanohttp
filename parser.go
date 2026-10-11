@@ -19,13 +19,13 @@ var (
 )
 
 var (
-	ErrUnsupportedHttpMethod       = errors.New("Unsupported http method.")
-	ErrUnsupportedHttpVersion      = errors.New("Unsupported http version.")
-	ErrInvalidHttpRequestLine      = errors.New("Invalid request line.")
-	ErrInvalidHttpHeader           = errors.New("Invalid header.")
-	ErrInvalidContentLength        = errors.New("Invalid Content Length")
-	ErrBodyTooLarge                = errors.New("Body size is too large. Maximum size 10MB.")
-	ErrUnsupportedTransferEncoding = errors.New("Unsupported transfer encoding.")
+	ErrUnsupportedHttpMethod       = errors.New("unsupported http method")
+	ErrUnsupportedHttpVersion      = errors.New("unsupported http version")
+	ErrInvalidHttpRequestLine      = errors.New("invalid request line")
+	ErrInvalidHttpHeader           = errors.New("invalid header")
+	ErrInvalidContentLength        = errors.New("invalid Content Length")
+	ErrBodyTooLarge                = errors.New("body size is too large. Maximum size 10MB")
+	ErrUnsupportedTransferEncoding = errors.New("unsupported transfer encoding")
 )
 
 func ParseRequest(reader *bufio.Reader) (*Request, error) {
