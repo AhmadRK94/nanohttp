@@ -16,11 +16,8 @@ A minimal HTTP server and routing library built from scratch in Go using TCP con
 
 ## Installation
 
-Clone the repository:
-
 ```bash
-git clone https://github.com/AhmadRK94/nanohttp.git
-cd nanohttp
+go get -u github.com/AhmadRK94/nanohttp
 ```
 
 ## Usage
