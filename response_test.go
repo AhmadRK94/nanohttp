@@ -33,14 +33,19 @@ func readResponse(t *testing.T, conn net.Conn) (string, map[string]string, []byt
 		}
 		headers[strings.ToLower(parts[0])] = strings.TrimSpace(parts[1])
 	}
-	bodySize, err := strconv.Atoi(headers["content-length"])
-	if err != nil {
-		t.Fatal(err)
+	var body []byte
+
+	if _, exists := headers["content-length"]; exists {
+		bodySize, err := strconv.Atoi(headers["content-length"])
+		if err != nil {
+			t.Fatal(err)
+		}
+		body = make([]byte, bodySize)
+		if _, err := io.ReadFull(reader, body); err != nil {
+			t.Fatalf("reading body: %v", err)
+		}
 	}
-	body := make([]byte, bodySize)
-	if _, err := io.ReadFull(reader, body); err != nil {
-		t.Fatalf("reading body: %v", err)
-	}
+
 	return statusLine, headers, body
 }
 
